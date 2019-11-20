@@ -1,0 +1,48 @@
+{% load static %}
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity=">sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{% static 'music/watch.css' %}"/>
+	<link rel="stylesheet" type="text/css" href="{% static 'music/watch.css' %}"/>
+
+
+<div class="wrapper">
+  	<div class="container-fluid">
+  		<div class="row">
+    		<div class="col">
+      			<div class="grid">
+		            <img class="resize-image" src="{{ video.video_file.url }}"  class="card-img-top" alt="...">
+		         	<div class="data">
+		            	<h3>{{ video.artist}} - {{ video.video_title }}</h3>  
+		          </div>
+		        </div>
+		    </div> 
+      	</div>
+    </div>
+    <div class="side-videos">
+    	{% if video_list %}
+    	{% for play in video_list %}
+    	<div class=" ">
+  			<div class="row no-gutters">
+    			<div class="col">
+    				
+      					<img class="image-resize" src="{{ play.video_file.url }}" class="card-img" alt="...">
+      				
+    			</div>
+    			<div class="col">
+        			<h3><a href="{{ videos.get_absolute_url }}" class="">{{ play.artist }} - {{ play.video_title }}</a></h3>
+    			</div>
+  			</div>
+		</div>
+    	{% endfor %}
+    	{% endif %}
+    </div>
+</div>	
+<!--
+        	<div class="html5-video-container" data-layer="0">
+        		<video tabindex="-1" class="video-stream html5-main-video" controlist="download" style="width:640px; height: 360px"left:0px top: 0px; src="">
+        		</video>
+        	
+        	</div>
+		        -->
+	
